@@ -1,0 +1,23 @@
+{
+  "name": "move-to-s3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "web": "node web-server.js",
+    "start": "node web-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1105.0",
+    "better-sqlite3": "^13.0.3",
+    "cli-progress": "^3.12.0",
+    "dotenv": "^17.4.2",
+    "mailparser": "^3.9.20",
+    "p-limit": "^7.3.1"
+  }
+}
