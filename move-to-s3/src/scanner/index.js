@@ -8,6 +8,17 @@ let added = 0;
 let skipped = 0;
 let progressTimer = null;
 
+// userEmail/file.eml -> domain/userEmail/file.eml
+// e.g. arjun@bfccapital.com/1.eml -> bfccapital.com/arjun@bfccapital.com/1.eml
+function buildS3Key(relativePath) {
+    const [userEmail, ...rest] = relativePath.split("/");
+    const domain = userEmail.includes("@")
+        ? userEmail.split("@").pop().toLowerCase()
+        : "unknown-domain";
+
+    return [domain, userEmail, ...rest].join("/");
+}
+
 function scanDirectory(rootFolder, currentFolder = rootFolder) {
  
     const items = fs.readdirSync(currentFolder, {
@@ -32,11 +43,13 @@ function scanDirectory(rootFolder, currentFolder = rootFolder) {
         const relativePath = path
             .relative(rootFolder, fullPath)
             .replace(/\\/g, "/");
+        
+        const s3Key = buildS3Key(relativePath);
 
         const result = addFile.run({
             file_path: fullPath,
             relative_path: relativePath,
-            s3_key: relativePath,
+            s3_key: s3Key,
             file_size: stats.size,
             created_at: new Date().toISOString(),
         });

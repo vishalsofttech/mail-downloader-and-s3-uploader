@@ -4,6 +4,7 @@ const { uploadOneFile } = require("./src/services/upload");
 const { uploadWorker } = require("./src/workers/uploadWorker");
 const { startWorkers, shutdown } = require("./src/workers");
 const scanner = require("./src/scanner")
+const { retryFailedFiles } = require("./src/services/retryFailed");
 const command = process.argv[2];
 
 
@@ -74,6 +75,14 @@ async function main() {
       break;
 
     // =========================================
+    // RETRY FAILED FILES
+    // =========================================
+
+    case "retry-failed":
+      await retryFailedFiles({ dryRun: process.argv.includes("--dry-run") });
+      break;
+
+    // =========================================
     // WEB DASHBOARD VIEWER
     // =========================================
 
@@ -92,6 +101,7 @@ node app.js stats
 node app.js workers
 node app.js scanner
 node app.js upload-one
+node app.js retry-failed [--dry-run]
 `);
   }
 }
