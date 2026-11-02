@@ -417,58 +417,77 @@ module.exports = {
     //   }
     // },
 
-    // **************************** 
-    
-    // {
-    //   name:"deeptibansal@bfccapital.com",
-    //   script:"./server.js",
-    //   env: {
-    //     REDIFFMAIL_USERNAME: "deeptibansal@bfccapital.com",
-    //     REDIFFMAIL_PASSWORD: "BFC@2023",
-    //     REDIFFMAIL_HOST: "spop.rediffmailpro.com",
-    //     REDIFFMAIL_PORT: 110,
-    //     REDIFFMAIL_TLS: false,
-    //   }
-    // },
-
     
     // **************************** completed ****************************
 
-    //  {
-    //   name:"sunilgupta@bfccapital.com",
-    //   script:"./server.js",
-    //   env: {
-    //     REDIFFMAIL_USERNAME: "sunilgupta@bfccapital.com",
-    //     REDIFFMAIL_PASSWORD: "Bfctemp@2026",
-    //     REDIFFMAIL_HOST: "spop.rediffmailpro.com",
-    //     REDIFFMAIL_PORT: 110,
-    //     REDIFFMAIL_TLS: false,
-    //   }
-    // },
+ 
 
-     {
-      name:"sharadbindal@bfccapital.com",
-      script:"./server.js",
-      env: {
-        REDIFFMAIL_USERNAME: "sharadbindal@bfccapital.com",
-        REDIFFMAIL_PASSWORD: "Bfctemp@2026",
-        REDIFFMAIL_HOST: "spop.rediffmailpro.com",
-        REDIFFMAIL_PORT: 110,
-        REDIFFMAIL_TLS: false,
-      }
-     },
+    
+   // ************************************* completed ******************************************
+
+    // ************************************* completed ******************************************
+
+    
+
+    //********************************* Hrd@bfcapital ************************* */
+    
 
      
+     // **************************** buggy *********************************************
+
+
+
+    
+    //  {
+    //   name:"paritoshsingh@bfccapital.com",
+    //   script:"./server.js",
+    //   env: {
+    //     REDIFFMAIL_USERNAME: "paritoshsingh@bfccapital.com",
+    //     REDIFFMAIL_PASSWORD: "123456789",
+    //     REDIFFMAIL_HOST: "pop.rediffmailpro.com",
+    //     REDIFFMAIL_PORT: 995,
+    //     REDIFFMAIL_TLS: true,
+    //   }
+    //  },
+   
+    // INBOX Data Completed 
+
     {
-      name:"sharadbindal@bfccapital.com",
+      name:"nainierastogi@bfccapital.com",
       script:"./server.js",
       env: {
-        REDIFFMAIL_USERNAME: "sharadbindal@bfccapital.com",
-        REDIFFMAIL_PASSWORD: "Bfctemp@2026",
-        REDIFFMAIL_HOST: "spop.rediffmailpro.com",
-        REDIFFMAIL_PORT: 110,
-        REDIFFMAIL_TLS: false,
+        REDIFFMAIL_USERNAME: "nainierastogi@bfccapital.com",
+        REDIFFMAIL_PASSWORD: "BFCcapital@2025",
+        REDIFFMAIL_HOST: "pop.rediffmailpro.com",
+        REDIFFMAIL_PORT: 995,
+        REDIFFMAIL_TLS: true,
       }
      },
+
+
+   {
+      name:"ravisingh@bfccapital.com",
+      script:"./server.js",
+      env: {
+        REDIFFMAIL_USERNAME: "ravisingh@bfccapital.com",
+        REDIFFMAIL_PASSWORD: "Nishu@181",
+        REDIFFMAIL_HOST: "pop.rediffmailpro.com",
+        REDIFFMAIL_PORT: 995,
+        REDIFFMAIL_TLS: true,
+      }
+     },
+
+     {
+      name:"paritoshsingh@bfccapital.com",
+      script:"./server.js",
+      env: {
+        REDIFFMAIL_USERNAME: "paritoshsingh@bfccapital.com",
+        REDIFFMAIL_PASSWORD: "123456789",
+        REDIFFMAIL_HOST: "pop.rediffmailpro.com",
+        REDIFFMAIL_PORT: 995,
+        REDIFFMAIL_TLS: true,
+      }
+     },
+
   ]
 };

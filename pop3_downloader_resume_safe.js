@@ -170,7 +170,7 @@ process.on("unhandledRejection", async (err) => {
 
 async function downloadMails() {
   try {
-    console.log(`Starting POP3 download for ${user}`);
+    console.log(`Starting POP3d download for ${user}`);
 
     const parts = user.split("@");
 
@@ -224,23 +224,28 @@ async function downloadMails() {
     console.log("Fetching UIDL list...");
     uidLoaded = false;
     uidls = await pop3.UIDL();
+     
     uidLoaded = true;
 
     console.log(`Total messages on server: ${uidls.length}`);
-    // console.log(uidls)
     const startTime = Date.now();
 
     for (let i = 0; i < uidls.length; i++) {
       const [msgNum, uid] = uidls[i];
+      console.log(msgNum) 
 
+      if(msgNum == 8627 || msgNum == 8095 || msgNum == 6894 || msgNum == 5149 || msgNum == 4632 || msgNum == 4747 || msgNum == 4770 || msgNum == 4914 || msgNum == 5130 || msgNum == 5137 || msgNum == 5148) 
+        continue;
+      
       lastProcessedUID = uid;
       lastProcessedMsgNum = msgNum;
+      console.log(msgNum) 
 
       if (downloadedUIDs.has(uid)) {
         skippedCount++;
         continue;
       }
-
+     
       const fileName = safeFilename(uid) + ".eml";
 
       const filePath = path.join(targetDir, fileName);
@@ -251,7 +256,7 @@ async function downloadMails() {
         // const size = await pop3.LIST(msgNum);
 
         const rawMessage = await pop3.RETR(msgNum);
-
+        
         await fs.promises.writeFile(filePath, rawMessage, "utf8");
 
         downloadedUIDs.add(uid);
